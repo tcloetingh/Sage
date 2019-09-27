@@ -11,6 +11,7 @@ class EstimatesController < ApplicationController
     @estimate.create(estimate_params)
     if @estimate.valid?
       redirect_to root_path
+    end
   end
 
   private
