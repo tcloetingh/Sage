@@ -8,9 +8,11 @@ class EstimatesController < ApplicationController
   end
 
   def create
-    @estimate.create(estimate_params)
-    if @estimate.valid?
+    @estimate = Estimate.create(estimate_params)
+    if @gram.valid?
       redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
